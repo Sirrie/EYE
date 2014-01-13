@@ -1,0 +1,130 @@
+	<!--script type="test/javascritp" src="js/jplayer.jplaylist.min.js"></script-->
+	<script type="text/javascript" src=" https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+	
+	
+ 
+ 	<link rel="stylesheet" href="main.css" type="text/css" media="all" />
+
+
+	<script langurage="javascript" type="text/javascript" src="js/jquery.jplayer.min.js"></script>
+	<script language="javascript" type="text/javascript" src="js/jplayer.playlist.min.js"></script>
+    <!--script type="text/javascript" src="js/jplayer.inspector.js"></script-->
+
+<<<<<<< HEAD
+=======
+	<!--script type="test/javascritp" src="js/jplayer.jplaylist.min.js"></script-->
+	<script type="text/javascript" src="js/jquery.jplayer.min.js"></script>
+	<script type="text/javascritp" src="js/jplayer.playlist.min.js"></script>
+>>>>>>> parent of 795a60e... one song play
+
+	<link rel="stylesheet" href="main.css" type="text/css" media="all" />
+<style>
+body{background:#eee;font-family:Verdana, Helvetica, Arial, sans-serif;margin:0;padding:0} 
+.example{background:#FFF;width:1000px;height:500px;font-size:80%;border:1px #000 solid;margin:0.5em 10% 0.5em;padding:1em 2em 2em;-moz-border-radius:3px;-webkit-border-radius:3px} 
+.example .players{float:left;margin:10px}  
+</style>
+<script type="text/javascript" language="javascript">
+
+$(document).ready(function(){
+	$("#jquery_jplayer_1").jPlayer(
+	{
+		ready:function(){
+			$(this).jPlayer("setMedia",{
+				mp3:"media/A.mp3",
+			}).jPlayer("play");
+		},
+		
+		swfPath:"swf",
+		supplied:"mp3"
+	})
+	.bind($.jPlayer.event.play, function() { // pause other instances of player when current one play
+            $(this).jPlayer("pauseOthers");
+});
+<<<<<<< HEAD
+});*/
+//alert("success");
+// playlist test
+	
+	 new jPlayerPlaylist({
+			jPlayer:"#jquery_jplayer_1",
+			cssSelectorAncestor:"#jp_container_1"
+			
+			
+
+		},[
+		{title:"my sound1",mp3:"media/track.mp3"},
+		{title:"my sound2",mp3:"media/D.mp3"},
+		{title:"my sound3",mp3:"media/F.mp3"}],
+		{
+			
+
+=======
+});
+
+
+// playlist test
+	 /*new jPlayerPlaylist({
+			jPlayer:"#jquery_jplayer_1",
+			cssSelectorAncestor:"#jp_container_1",
+			verticalVolume:"true",
+
+		},[
+		{title:"my sound1",mp3:"media/A.mp3"},
+		{title:"my sound2",mp3:"media/B.mp3"},
+		{title:"my sound3",mp3:"media/track.mp3"}],
+		{
+			reday: function(){$(this).jPlayer("play").jPlayer("repeat");},
+>>>>>>> parent of 795a60e... one song play
+			swfPath:"swf",
+			supplied:"mp3",
+			wmode:"window",
+			smoothPlayBar: true,
+			keyEnabled: true,
+			playlistOptions:{autoPlay:true}
+		});
+<<<<<<< HEAD
+	  //$(".jp-shuffle").trigger("click");
+});
+=======
+});*/
+>>>>>>> parent of 795a60e... one song play
+
+
+
+
+	
+
+
+
+</script>
+
+</head>
+<div class="example">
+	<div>
+		<div class="players">
+			<h2> audio player</h2>
+			 <div class="jp-type-single">
+				<div id="jquery_jplayer_1" class="jp-player"></div>
+				<div id="jp_container_1" class="jp-audio">
+				<ul class="jp-controls">
+					<li><a href="javascript:;" class="jp-play" tabindex="1">play</a></li>
+					<li><a href="javascirpt:;" class="jp-pause" tabindex="1">pause</a></li>
+				</ul>
+
+
+				<div class="jp-current-time"></div>
+   <div class="jp-duration"></div>
+   <ul class="jp-toggles">
+                                <li><a href="javascript:;" class="jp-shuffle" tabindex="1" title="shuffle">shuffle</a></li>
+                  <li><a href="javascript:;" class="jp-shuffle-off" tabindex="1" title="shuffle off">shuffle off</a></li>
+    <li><a href="javascript:;" class="jp-repeat" tabindex="1" title="repeat">repeat</a></li>
+    <li><a href="javascript:;" class="jp-repeat-off" tabindex="1" title="repeat off">repeat off</a></li>
+   </ul>
+  </div>
+
+  <div class="jp-playlist"><ul><li></li></ul></div>
+			</div>
+		</div>
+	</div>
+</div>
+

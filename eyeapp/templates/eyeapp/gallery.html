@@ -1,0 +1,242 @@
+u<!DOCTYPE html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+{% block style %}
+
+<script type="text/javascript" src=" https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+
+<link type="text/css" href="/static/styles/bottom.css" rel="stylesheet" />
+<link type="text/css" href="/static/styles/base.css" rel="stylesheet" />
+<script type="text/javascript" src="/static/js/jquery.jcarousel.min.js"></script>
+<script type="text/javascript" src="/static/js/jquery.pikachoose.js"></script>
+<script type="text/javascript" src="/static/js/jquery.touchwipe.min.js"></script>
+<!-- the music playing function-->
+<script type="text/javascript" src="/static/js/jquery.jplayer.min.js"></script>
+
+<script type="text/javascript" src="/static/js/jplayer.playlist.min.js"></script>
+<link rel="stylesheet" href="/static/css/main.css" type="text/css" media="all" />
+<link rel="stylesheet" href="/static/css/jplayer.blue.monday.css" type="text/css" media="all"/>
+
+<script language="javascript">
+    $(document).ready(function (){
+
+                   // alert("success");
+                   
+                    $("#pikame").PikaChoose({showTooltips:true});
+
+
+                
+     alert("success");
+
+
+<<<<<<< HEAD
+
+    /*$("#jquery_jplayer_1").jPlayer(
+
+=======
+ 
+    $("#jquery_jplayer_1").jPlayer(
+>>>>>>> df466e46537c48abb4b459c85009f9b51c11b3cd
+    {
+        ready:function(){
+            $(this).jPlayer("setMedia",{
+                mp3:"/static/media/A.mp3",
+            }).jPlayer("play");
+        },
+        
+        swfPath:"/static/js",
+        supplied:"mp3"
+    })
+    .bind($.jPlayer.event.play, function() { // pause other instances of player when current one play
+            $(this).jPlayer("pauseOthers");
+        });
+        alert("again");
+<<<<<<< HEAD
+});*/
+    /*new jPlayerPlaylist({
+=======
+
+});
+   /* new jPlayerPlaylist({
+>>>>>>> df466e46537c48abb4b459c85009f9b51c11b3cd
+            jPlayer:"#jquery_jplayer_1",
+            cssSelectorAncestor:"#jp_container_1",
+            verticalVolumen:"true"
+
+    },[
+    {title:"my sound1",mp3:"/static/media/D.mp3"},
+    {title:"my sound2",mp3:"/static/media/E.mp3"},
+    {title:"my sound3",mp3:"/static/media/F.mp3"},
+    {title:"my sound4",mp3:"/static/media/When.mp3"}],{
+
+        swfPath:"/static/js",
+        supplied:"mp3",
+        wmode:"window",
+        smoothPlayerBar:true,
+        keyEnabled:true
+
+    });
+
+
+});*/
+
+
+});
+
+<<<<<<< HEAD
+
+=======
+>>>>>>> df466e46537c48abb4b459c85009f9b51c11b3cd
+        </script>
+
+{% endblock %}
+
+{% block subcontent %}
+      
+      <body bgcolor="silver">
+<!--div class="row" id="photo-gallery">
+    
+    <a class="active" href="/eye/galler.html">jump to other place</a>
+</div>
+
+<div id="pins">
+    
+    
+{% for photo in photos %}
+    <div class="pin" data-id="{{photo.id}}">
+        <a href="/media/upload/{{photo.imgurl}}" data-lightbox="image-1" data-id="{{photo.id}}" style="background: #775b4e">
+              <div class="image-wrapper">
+
+                  <img src="/media/upload/{{photo.imgurl}}"/>
+              </div>
+            </a>
+            <p>{{photo.description}}</p>
+            <div class="pin-footer">
+                <div class="avatar pull-left">
+                  {% for tag in photo.tags.slugs%}
+                    {{tag}}
+                  {% endfor %}
+                </div>
+                <div class="text pull-right">
+                    <span class="dim">by</span>
+                    <a href="fake">{{photo.user.username}}</a>
+                </div>
+            </div>
+    </div>
+
+    {% endfor %}
+    </div>
+</ul>
+</div-->
+<div class="pikachoose">
+
+<ul id="pikame">
+    {% for photo in photos %}
+    
+        <li><img src="/media/upload/{{photo.imgurl}}"/><span>{{photo.description}}</span></li>
+              
+            <!--div class="pin-footer">
+                <div class="avatar pull-left">
+                  {% for tag in photo.tags.slugs%}
+                    {{tag}}
+                  {% endfor %}
+                </div>
+                <div class="text pull-right">
+                    <span class="dim">by</span>
+                    <a href="fake">{{photo.user.username}}</a>
+                </div>
+            </div-->
+
+
+    {% endfor %}
+
+   
+</ul>
+<div>
+    <a href="/eye/">Back to homestream</a>
+    <a href="/eyeapp/test_media.html">GOO</a>
+    </div>
+</div>
+
+<!--one song>
+<div class="players">
+           <div class="jp-audio">
+            
+
+             <div class="jp-type-single">
+                <div id="jquery_jplayer_1" class="jp-player"></div>
+               <div id="jp_container_1" class="jp-interface">
+               <ul class="jp-controls">                    <li><a href="#" class="jp-play" tabindex="1">play</a></li>
+                    <li><a href="#" class="jp-pause" tabindex="1">pause</a></li>
+                </ul>
+                <div>
+            </div>
+        </div>
+    </div-->
+
+    
+       <div class="example">
+    <div>
+        <div class="players">
+            <h2> audio player</h2>
+             <div class="jp-type-single">
+                <div id="jquery_jplayer_1" class="jp-player"></div>
+                <div id="jp_container_1" class="jp-audio">
+                <ul class="jp-controls">
+                    <li><a href="javascript:;" class="jp-play" tabindex="1">play</a></li>
+                    <li><a href="javascirpt:;" class="jp-pause" tabindex="1">pause</a></li>
+                </ul>
+
+
+                <div class="jp-current-time"></div>
+   <div class="jp-duration"></div>
+   <ul class="jp-toggles">
+                                <li><a href="javascript:;" class="jp-shuffle" tabindex="1" title="shuffle">shuffle</a></li>
+                  
+   
+  </div>
+
+  <div class="jp-playlist"><ul><li></li></ul></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    
+        <div class="players">
+            <div class="jp-audio">
+            
+
+             <div class="jp-type-single">
+                <div id="jquery_jplayer_1" class="jp-player"></div>
+                <div id="jp_container_1" class="jp-interface">
+                <ul class="jp-controls">
+                    <li><a href="#" class="jp-play" tabindex="1">play</a></li>
+                    <li><a href="#" class="jp-pause" tabindex="1">pause</a></li>
+                </ul>
+                <div>
+            </div>
+        </div>
+    </div>
+
+<!--script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="/static/js/jquery-1.10.2.min.js"></script-->
+<script src="/static/js/lightbox-2.6.min.js"></script>
+<script src="/static/vendor/handlebars/1.0.0/handlebars.js"></script>
+<!--script src="/static/vendor/bootstrap/3.0.0/js/bootstrap.js"></script>
+<script src="/static/vendor/fineuploader/3.1.1/jquery.fineuploader.js"></script>
+<script src="/static/js/messages.js"></script>
+<script src="/static/js/helpers.js"></script>
+<script src="/static/js/pin-form.js"></script>
+<script src="/static/js/pinry.js"></script>
+<script src="/static/js/myjs.js"></script-->
+
+{% endblock subcontent %}
+
+
+
+</body>
+</html>

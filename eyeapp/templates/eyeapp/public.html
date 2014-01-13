@@ -1,0 +1,112 @@
+{% extends "eyeapp/base_m.html" %}
+
+
+{% block style %}
+<link rel="stylesheet" href="{{ STATIC_URL }}css/login.css"/>
+<!--link rel="stylesheet" href="{{ STATIC_URL }}css/mystyle1.css"/-->
+<link src="{{ STATIC_URL }}js/myjs.js"/>
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300,400,700"/>
+<!--link rel="stylesheet" href="/static/fcss/mystyle1.css"/-->
+<link rel="stylesheet" href="/static/fcss/jumbotron.css"/>
+<link rel="stylesheet" href="/static/vendor/bootstrap/3.0.0/css/bootstrap.css">
+<link rel="stylesheet" href="/static/vendor/fineuploader/3.1.1/fineuploader.css">
+<link rel="stylesheet" href="/static/css/messages.css">
+<link rel="stylesheet" href="/static/css/lightbox.css">
+<link rel="stylesheet" href="/static/css/pinry.css">
+
+{% endblock %}
+
+{% block subcontent %}
+<body bgcolor="silver">
+
+
+<div id="pins">
+    
+{% for photo in photos %}
+    <div class="pin" data-id="{{photo.id}}">
+        <a href="/media/upload/{{photo.imgurl}}" class="lightbox" data-id="{{photo.id}}" style="background: #775b4e">
+              <div class="image-wrapper">
+
+                  <img src="/media/upload/{{photo.imgurl}}"/>
+              </div>
+            </a>
+            <p>{{photo.description}}</p>
+            <div class="pin-footer">
+                <div class="avatar pull-left">
+                  {% for tag in photo.tags.slugs%}
+                    <a href="/eye/explore?keyword={{tag}}">{{tag}}</a>
+                  {% endfor %}
+                </div>
+                <div class="text pull-right">
+                    <span class="dim">by</span>
+                    <a href="/eye/user?uname={{photo.user.username}}">{{photo.user.username}}</a>
+                </div>
+            </div>
+    </div>
+
+    {% endfor %}
+    </div>
+</div>
+
+{% include "eyeapp/lightbox.html" %}
+
+
+ <script>$(function(){ $('#pikame').pikachoose(); });</script>
+
+<script id="pin-form-template" type="text/x-handlebars-template">
+        <div class="modal fade" id="pin-form">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title">New Photo</h3>
+                    </div>
+                    <div class="modal-body">
+                        <div class="col-sm-6" id="pin-form-image-preview"><img src="" height="300" width="250"></div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="control-label" for="pin-form-image-url">Image URL</label>
+                                <input type="text" name="pin-form-image-url" id="pin-form-image-url" class="form-control"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="pin-form-image-upload">Image Upload</label>
+                                <div id="pin-form-image-upload"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="pin-form-description">Description</label>
+                                <textarea name="pin-form-description" id="pin-form-description" class="form-control"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="pin-form-tags">Tags</label>
+                                <input type="text" name="pin-form-tags" id="pin-form-tags" class="form-control"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-default" id="pin-form-close">Cancel</a>
+                        <button type="submit" class="btn btn-primary" id="pin-form-submit">Post Pin</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+
+<!--script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script-->
+<!--script src="/static/js/jquery-1.10.2.min.js"></script-->
+<!--script src="/static/js/lightbox-2.6.min.js"></script-->
+<script src="/static/vendor/jquery/2.0.3/jquery-2.0.3.js"></script>
+<script src="/static/js/handlebars-v1.1.2.js"></script>
+<script src="/static/vendor/bootstrap/3.0.0/js/bootstrap.js"></script>
+<script src="/static/vendor/fineuploader/3.1.1/jquery.fineuploader.js"></script>
+<script src="/static/js/messages.js"></script>
+<script src="/static/js/helpers.js"></script>
+<script src="/static/js/lightbox.js"></script>
+<script src="/static/js/pin-form.js"></script>
+<script src="/static/js/pinry.js"></script>
+<script src="/static/js/myjs.js"></script>
+
+{% endblock subcontent %}
+
+
+
+</body>
+</html>

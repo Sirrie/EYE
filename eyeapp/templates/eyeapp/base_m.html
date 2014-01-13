@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+
+<title>EYE</title>
+{% block style %}
+{% endblock %}
+
+<style>
+body
+{
+background-color:black;
+}
+</style>
+
+<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/global.css" />
+<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/highlit.css" />
+<link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap.css"/>
+<link rel="stylesheet" href="{{ STATIC_URL }}css/jumbotron.css"/>
+<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/home.css" />
+<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/slider.css" />
+<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/novi-slider.css"/>
+
+
+</head>
+<body id="home">
+
+  <div id="bg">
+  <div id="bg2">
+<!-- begin page content -->
+    <div id="page">
+    
+      <div id="header">
+        <a href="/"><img src="/static/imgs/logo.png" height="60px" width="60px"></a>
+        <ul id="nav">
+          <li><a href="/">Home</a><li>
+          <li><a href="/eye/you">You</a></li>
+          <li><a href="/eye/explore">Explore</a></li>
+          <li><a onclick="pinForm()">Upload</a></li>
+          <li><a href="/eye/gallery">Gallery</a></li>
+          <li><a href="/eye/logout">Logout</a></li>
+        </ul>
+      </div>
+{% block subcontent %}
+            
+      
+<!-- end page content -->
+  </div>
+</div>
+
+{% endblock %}
+
+
+</body>
+</html>

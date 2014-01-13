@@ -1,0 +1,103 @@
+
+#home #bg2 {
+	width: 100%;
+	
+}
+
+
+#home h1.intro {
+  font-size: 55px;
+  font-weight: 400;
+  letter-spacing: -2px;
+  color: #fff;
+  padding: 0;
+  text-align: center;
+  margin-bottom: 10px;
+  
+  
+}
+#home h1.intro span {
+  display:inline;
+  clear: left;
+  float: none;
+  background: transparent;
+  line-height: .6;
+  padding: 0px;
+  
+  
+  text-shadow: -1px -1px 0px #383838;
+/* filter: dropshadow(color=#383838, offx=-1, offy=-1); */
+  
+  
+  
+}
+#home h1.intro span.last,
+#home h1.intro span:last-child {
+  color: #00d05f !important;
+    padding: 0;
+    background: transparent;
+    text-shadow: 0px 0px 5px #00d05f;
+/* filter: dropshadow(color=#4d4d4d, offx=0, offy=0); */
+ -webkit-text-stroke: 1px #00e68a;  
+
+}
+
+/*
+#home h2.intro {
+  width: 280px;
+  height: 173px;
+  background: url(/_images/mainsprite.gif) no-repeat left top;
+  text-indent: -9999em;
+}
+*/
+
+#home p.introp {
+
+ 
+  line-height: 25px;
+  text-align: center;
+  width: 80%;
+  
+  font-weight: 200;
+  font-size: 1.2em;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  color: #ccc;
+   text-shadow: -1px -1px 0px #383838;
+/* filter: dropshadow(color=#383838, offx=-1, offy=-1); */
+}
+
+#home p.introp a {  font-weight: 400; /* color: #00d05f; background: transparent; */  background: transparent;  }
+
+#home p.introp a:hover {color: #00d05f;} 
+
+.homeimageholder { text-align: center; position: relative; }
+
+
+#home #subcontent { /* margin-top: -100px; */ text-align: left; margin-top:5px; background: rgba(0, 0, 0, 0.95); }
+
+.homeimageshadow em { position: absolute; text-indent: -9000px;}
+
+#home #content { padding: 30px 0px;}
+
+.hometext p a {
+	color: #43A0D4;
+}
+
+.hometext p a i {
+	font-size: 0.8em;
+}
+
+.hometext p a:hover {
+	color: #fff;
+}
+
+.hometext { background: #222; background: rgba(20, 20, 20, 0.75);  padding: 44px 30px 0px 0px; font-size: 2.1em; position: absolute; top: 500px; left: 0; z-index: 999; width: 925px; height: 80px; }
+
+.hometext p { line-height: 140%; color: #fff; font-weight: 200; text-shadow: 0px 0px 5px #141414; }
+	
+filter: dropshadow(color=#141414, offx=0, offy=0);}
+
+a.homefeaturelink {background:#222; background: rgba(20, 20, 20, 0.6); padding: 20px 0px; margin: 5px 0px; display: block; font-size: 1.2em; color: #00d05f;}
+
+a.homefeaturelink:hover { background: #fff; color: #000;}

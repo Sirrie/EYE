@@ -1,0 +1,26 @@
+{% verbatim %}
+    <script id="lightbox-template" type="text/x-handlebars-template">
+        <div class="lightbox-background">
+            <div class="lightbox-wrapper">
+                <div class="lightbox-image-wrapper">
+                    <img class="lightbox-image" id="test" src="/media/upload/{{imgurl}}" />
+                    <div class="modal-content">
+                    	{{#if items}}
+	                    <b>Comments</b>
+						{{#each items}}
+						<p align="left">
+						  <b>{{user}}</b> -- {{text}}
+						</p>
+						{{/each}}
+				   		{{/if}}
+	                    <form action="/eye/comment" class="comment-form" method="post" id="commentForm"> 
+					        <input type="hidden" name="pid" value={{pid}}>
+							<input type="text" placeholder="Write a comment..." class="form-control comment-text" name="comment" value={{comment}}> 
+					         <button type="button" name="comm" class="btn btn-info comment-submit">Reply</button>
+						</form>
+					</div>
+                </div>
+            </div>
+        </div>
+    </script>
+{% endverbatim %}

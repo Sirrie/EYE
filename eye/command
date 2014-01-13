@@ -1,0 +1,5 @@
+curl --form "body=shit" http://127.0.0.1:8000/api/entry/
+curl --data "body='shit'" http://127.0.0.1:8000/api/entry/
+curl --dump-header - -H "Content-Type: application/json" -X POST --data '{"body": "This will prbbly be my lst post."}' http://localhost:8000/api/entry/
+
+curl --dump-header - -H "Content-Type: application/json" -X POST --data '{"body": "This will prbbly be my lst post.", "pub_date": "2011-05-22T00:46:38", "slug": "another-post", "title": "Another Post"}' http://localhost:8000/api/entry/

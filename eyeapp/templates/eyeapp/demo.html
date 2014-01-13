@@ -1,0 +1,294 @@
+
+<!DOCTYPE html>
+ 
+<html lang="en-us">
+<head>
+	
+	<title>Welcome to Eyes - Photo Sharing</title>
+	
+	<script data-script-purpose="page_timing">
+	 var farm_timing = {}; farm_timing.page_start = new Date().getTime();
+	</script>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	
+	<meta http-equiv="imagetoolbar" content="no">
+
+	<meta name="viewport" content="width=1036">
+
+	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300,400,700"/>
+	<!--link rel="stylesheet" href="/static/fcss/mystyle1.css"/-->
+	<link rel="stylesheet" href="/static/fcss/jumbotron.css"/>
+	<link rel="stylesheet" href="/static/vendor/bootstrap/3.0.0/css/bootstrap.css">
+	<link rel="stylesheet" href="/static/vendor/fineuploader/3.1.1/fineuploader.css">
+	<link rel="stylesheet" href="/static/css/messages.css">
+	<link rel="stylesheet" href="/static/css/lightbox.css">
+	<link rel="stylesheet" href="/static/css/pinry.css">
+
+ <style>
+body
+{
+background-color:black;
+}
+</style>
+
+ 	
+
+</head>
+
+
+<body class="zeus en-us with-eyebrow new-footer new-header super-liquid extras">
+
+<a name="top"></a>
+
+
+
+<div id="global-nav" class="no-js " >
+	
+	<div id="gn-wrap" class="gn-wrap">
+
+		<div class="logo" style="width: 90px;">
+			<a href="/" data-track="Logo-main" title="EYE"  class="navbar-brand" ><img src="/static/imgs/logo.png" height="80px" width="50px" style="padding-top:40px" ></a>
+				
+
+
+		</div>
+		
+		<div class="nav small-logo">
+			<ul class="top-nav">
+								
+								
+				<li class="gn-menu-parent toplink" data-context="you">
+					<a data-track="You-main" class="gn-link" href="/photos/106947745@N04/"><span>You</span></a>
+					
+				</li>
+								
+								
+				</li>
+				
+						
+								
+								<li class="gn-menu-parent toplink" data-context="explore">
+					<a data-track="Explore-main" class="gn-link explore" href="/explore"><span>Explore</span></a>
+					
+				</li>
+
+								
+								<li class="toplink  gn-upload">
+					<a data-track="Upload-main" class="gn-link" onclick="pinForm()">
+												<span>Upload</span>
+					</a>
+				</li>
+				<li class="toplink" data-context="logout"><a data-track="logout" class="gn-link" href="/eye/logout"><span>Logout</span></a>
+				</li>
+
+				</ul>
+					</div>
+		
+		
+
+	</div>
+</div>
+<div id="photo-gallery">
+	<button type="btn-info" value="jump to photo gallery">
+</div>
+<div id="pins" style="height: 594px;">
+{% for photo in photos %}
+    <div class="pin" data-id="{{photo.id}}">
+  			<a href="/media/upload/{{photo.imgurl}}" data-lightbox="image-1" data-id="{{photo.id}}">
+	            <div class="image-wrapper">
+	                <img src="/media/upload/{{photo.imgurl}}"/>
+	            </div>
+            </a>
+            <p>{{photo.description}}</p>
+            <div class="pin-footer clearfix">
+                <div class="avatar pull-left">
+              		{% for tag in photo.tags.slugs%}
+              			{{tag}}
+              		{% endfor %}
+                </div>
+                <div class="text pull-right">
+                    <span class="dim">by</span>
+                    <a href="fake">{{photo.user.username}}</a>
+                </div>
+            </div>
+    </div>
+
+    {% endfor %}
+</div>
+ 
+<script id="pin-form-template" type="text/x-handlebars-template">
+        <div class="modal fade" id="pin-form">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title">New Photo</h3>
+                    </div>
+                    <div class="modal-body">
+                        <div class="col-sm-6" id="pin-form-image-preview"><img src="" height="300" width="250"></div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="control-label" for="pin-form-image-url">Image URL</label>
+                                <input type="text" name="pin-form-image-url" id="pin-form-image-url" class="form-control"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="pin-form-image-upload">Image Upload</label>
+                                <div id="pin-form-image-upload"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="pin-form-description">Description</label>
+                                <textarea name="pin-form-description" id="pin-form-description" class="form-control"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="pin-form-tags">Tags</label>
+                                <input type="text" name="pin-form-tags" id="pin-form-tags" class="form-control"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-default" id="pin-form-close">Cancel</a>
+                        <button type="submit" class="btn btn-primary" id="pin-form-submit">Post Pin</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+    
+			
+					
+			
+			
+	
+<div id="main" class="clearfix" role="main">
+			
+	
+
+
+<style type="text/css" media="screen">
+	
+	body #main {
+		width: 1290px;
+	}
+
+	.card .imgWrapper {
+		max-height: 368px;
+	}
+
+	.card-a .imgWrapper {
+		width: 970px;
+	}
+
+	.card-b .imgWrapper,
+	.card-c .imgWrapper {
+		width: 480px;
+	}
+
+	.micro-card .content-section-wrapper {
+		width: 870px;
+	}
+	
+</style>
+
+
+
+		
+
+	
+<div id="sidebar">
+		
+		
+		
+		<div id="sihp-lrec" class="sihp-sidebar-module">
+						<div id="sihp-lrec" class="sihp-sidebar-module"> <iframe src="/static/
+
+
+						imgs/2.jpg" width="302" height="265" scrolling="no" frameborder="0" marginwidth="0" marginheight="0"></iframe> </div>
+
+						<div id="sihp-explore" class="sihp-sidebar-module"><h2><a id="explore-title"  data-rapid_p="1">Pictures you may like !</a></h2><ul class="clearfix"><li><span class="photo_container pc_s"><a data-track="thumb" data-rapid_p="2"><img src="/static/imgs/2.jpg" width="75" height="75" alt="Chinatown street scene VPL 5238 by Vancouver Public Library Historical Photographs" class="defer pc_img" border="0" id="yui_3_11_0_3_1383147326163_521" style="opacity: 1; transition: opacity 0.25s ease-in-out; -webkit-transition: opacity 0.25s ease-in-out;"></a></span></li><li><span class="photo_container pc_s"><a data-track="thumb" title="Pont d'Arcole a Paris by SMU Central University Libraries" data-rapid_p="3"><img src="/static/imgs/2.jpg" width="75" height="75" alt="Pont d'Arcole a Paris by SMU Central University Libraries" class="defer pc_img" border="0" id="yui_3_11_0_3_1383147326163_529" style="opacity: 1; transition: opacity 0.25s ease-in-out; -webkit-transition: opacity 0.25s ease-in-out;"></a></span></li><li><span class="photo_container pc_s"><a data-track="thumb" title="Chinatown, Vancouver VPL 5240 by Vancouver Public Library Historical Photographs" data-rapid_p="4"><img src="/static/imgs/2.jpg" width="75" height="75" alt="Chinatown, Vancouver VPL 5240 by Vancouver Public Library Historical Photographs" class="defer pc_img" border="0" id="yui_3_11_0_3_1383147326163_537" style="opacity: 1; transition: opacity 0.25s ease-in-out; -webkit-transition: opacity 0.25s ease-in-out;"></a></span></li></ul></div>
+		</div>
+		
+				
+		
+	
+				
+</div>
+
+
+
+
+<div id="activityFeed">
+								
+	
+	
+		
+
+	
+		
+		<div class="card card-a card-single clearfix firstCard" id="firstCard">
+				<div class="imgContainer">
+					<div class="imgWrapper  " data-photo-id="8070488682"
+						 data-photo-media="photo"
+						 data-photo-owner="45166873@N06"
+						 data-comments-total-count="607">
+						
+							<img src="/static/imgs/1.jpg" alt="Aurora loop" width="970" height="647" style="margin-left:0;margin-top:-140px"/>
+							<span class="thin-facade"></span><span class="fade-big"></span>
+						</a>
+
+						
+						
+					</div>
+				</div>
+		</div>
+				
+
+      <div class="card card-a card-single clearfix firstCard" id="firstCard">
+				<div class="imgContainer">
+					<div class="imgWrapper  " data-photo-id="8070488682"
+						 data-photo-media="photo"
+						 data-photo-owner="45166873@N06"
+						 data-comments-total-count="607">
+						
+							<img src="/static/imgs/1.jpg" alt="Aurora loop" width="970" height="647" style="margin-left:0;margin-top:-140px"/>
+							<span class="thin-facade"></span><span class="fade-big"></span>
+						</a>
+
+						
+						
+					</div>
+				</div>
+		</div>
+				
+	<div class="card card-a card-single clearfix firstCard" id="firstCard">
+				<div class="imgContainer">
+					<div class="imgWrapper  " data-photo-id="8070488682"
+						 data-photo-media="photo"
+						 data-photo-owner="45166873@N06"
+						 data-comments-total-count="607">
+						
+							<img src="/static/imgs/1.jpg" alt="Aurora loop" width="970" height="647" style="margin-left:0;margin-top:-140px"/>
+							<span class="thin-facade"></span><span class="fade-big"></span>
+						</a>
+
+					</div>
+				</div>
+	</div>
+</div>	
+</style>
+</div>		
+		<!-- JavaScript -->
+				<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+				<script src="/static/js/jquery-1.10.2.min.js"></script>
+				<script src="/static/js/lightbox-2.6.min.js"></script>
+				<script src="/static/vendor/handlebars/1.0.0/handlebars.js"></script>
+				<script src="/static/vendor/bootstrap/3.0.0/js/bootstrap.js"></script>
+				<script src="/static/vendor/fineuploader/3.1.1/jquery.fineuploader.js"></script>
+				<script src="/static/js/messages.js"></script>
+				<script src="/static/js/helpers.js"></script>
+				<script src="/static/js/pin-form.js"></script>
+				<script src="/static/js/pinry.js"></script>
+				<!-- End JavaScript -->
+
+
+</body>
+</html>

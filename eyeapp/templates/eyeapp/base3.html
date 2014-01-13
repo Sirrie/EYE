@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+
+<title>EYE</title>
+{% block style %}
+{% endblock %}
+
+<style type="text/css">
+
+body{
+  background-image:url('{{ STATIC_URL }}/imgs/bk.jpg');
+  background-size: 100% 100%;
+}
+.highslide img { border:0; }
+.highslide-caption { font-weight: bold; color: #fff; }
+.highslide-loading { border: 0; background-position: 3px 50%; -moz-border-radius: 5px; -webkit-border-radius: 5px; line-height: 20px; box-shadow: 0px 0px 10px rgba(0,0,0, 0.7); }
+.highslide-wrapper a { -webkit-transition: none; -moz-transition: none; transition: none; }
+
+
+</style>
+
+<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/global.css" />
+<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/highlit.css" />
+<link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap.css"/>
+<link rel="stylesheet" href="{{ STATIC_URL }}css/jumbotron.css"/>
+<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/home.css" />
+<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/slider.css" />
+<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/novi-slider.css"/>
+
+
+</head>
+<body id="home">
+
+  <div id="bg">
+  <div id="bg2">
+<!-- begin page content -->
+    <div id="page">
+    
+      <div id="header">
+        <a id="logo" href="/"><img src="{{ STATIC_URL }}imgs/logo.png" height="88px" width="50px"
+      style="padding-top:50px"></a>
+        <ul id="nav">
+          <li><a href="#">You</a></li>
+          <li><a href="#">Explore</a></li>
+          <li><a onclick="pinForm()">Upload</a></li>
+          <li><a class="active" href="/eye/logout">Logout</a></li>
+        </ul>
+      </div>
+{% block subcontent %}
+      <div id="content">
+       <div class="homeimageholder"> <h1 class="intro clearme"><span>Eye,</span> <span>Beauty,</span> <span class="last">share</span></h1>
+        <p class="introp"><!-- Reinvigorate measures your influence on the web in real-time. Gain up-to-the-minute insight into your audience, then adapt to meet their needs and watch your site grow. -->Simple, and have fun. </p>
+       
+      
+       </div>         
+      
+      
+           
+<!-- end page content -->
+  </div>
+</div>
+
+
+{% endblock %}
+
+
+</body>
+</html>

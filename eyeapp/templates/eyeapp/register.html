@@ -1,0 +1,43 @@
+{% extends "eyeapp/base3.html" %}
+
+{% block style %}
+<link rel="stylesheet" href="{{ STATIC_URL }}css/register.css"/>
+{% endblock style %}
+
+
+{% block subcontent %}
+
+      <div id="registration-form">
+
+
+
+
+ <legend>
+Register for eye:
+</legend>
+<form method="post" clss="registration-form" action="{% url 'register' %}" >
+	
+	{% if error in form %}
+	<p>{{form.error}}</p>
+	{% endif %}
+<table>
+{{form}}
+</table>
+    
+{% csrf_token %}
+<input type="submit" class="btn btn-info" value="Register" />
+</form>
+        
+
+   </div>
+ 
+
+
+
+
+
+{% endblock %}
+
+
+</body>
+</html>

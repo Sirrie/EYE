@@ -1,0 +1,67 @@
+{% extends "eyeapp/base3.html" %}
+
+
+{% block style %}
+<link rel="stylesheet" href="{{ STATIC_URL }}css/login.css"/>
+<!--link rel="stylesheet" href="{{ STATIC_URL }}css/mystyle1.css"/-->
+<link src="{{ STATIC_URL }}js/myjs.js"/>
+
+{% endblock %}
+
+
+{% block subcontent %}
+
+
+      
+      <body>
+
+{% if form.errors %}
+
+<div class="container">
+
+
+<p style="color:red;position: fixed;
+  top: 90%;
+  left: 20%;">
+Incorrect user name and password.
+</p>
+</div>
+{% endif %}
+
+  <section class="login">
+  <div class="titulo">Eye Login</div>
+
+  <form action="{% url 'login' %}" method="post" enctype="application/x-www-form-urlencoded">
+    <li style="color:gray">{{ form.username.label }}</li>
+
+        <li>{{ form.username }}</li>
+               <li style="color:gray">{{ form.password.label }} </li>  
+
+        <li>{{ form.password }}</li>
+                  
+        <div class="olvido">
+          <div class="col"><a href="/eye/register">Register</a></div>
+            <div class="col"><a href="#" title="Forget Password">Forget Password?</a></div>
+            <input type="submit" class="enviar" style="width: 300px; height: 40px" value="Submit">
+        </div>
+        
+          
+          <input type ="hidden" name="next" value="{{next }}" />
+        {% csrf_token %}
+    </form>
+</section>   
+        
+    
+
+   </div>
+ </div> <!-- /container -->
+
+
+
+
+{% endblock subcontent %}
+
+
+
+</body>
+</html>

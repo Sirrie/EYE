@@ -1,0 +1,207 @@
+#registration-form {
+    width: 40%;
+  min-width:250px;
+    margin: 0 auto;
+    position: relative;
+}
+
+#registration-form .fieldset {
+    background-color: #EDEDE5;
+    border: 1px solid silver;
+    border-radius: 3px;
+  
+}
+
+ #registration-form legend {
+    text-align: center;
+    background: #3c4859;
+    width: 100%;
+    padding: 13px 0;
+    border-radius: 3px 3px 0 0;
+    color: white;
+    font-size: 18px;
+    text-transform: uppercase;
+    text-shadow: 0 1px 3px rgba(0,0,0,.3);
+
+}
+
+.fieldset:before {
+    background-color: #EDEDE5;
+    content: '';
+    display: block;
+    height: 10px;
+    left: 50%;
+    position: absolute;
+    top: 45px;
+  margin-left:-2.5px;
+
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    width: 10px;
+    z-index: 1;
+
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+}
+
+.fieldset:hover::before {
+    background-color: #3c4859;
+}
+.fieldset form{
+margin:0 auto;
+  display:block;
+  width:90%;
+  padding:10px 0;
+}
+.placeholder #registration-form label {
+    display: none;
+}
+ .no-placeholder #registration-form label{
+margin-left:5px;
+  position:relative;
+  display:block;
+  color:grey;
+  text-shadow:0 1px white;
+  font-weight:bold;
+}
+/* all */
+::-webkit-input-placeholder { text-shadow:1px 1px 1px white; font-weight:bold; }
+::-moz-placeholder { text-shadow:0 1px 1px white; font-weight:bold; } /* firefox 19+ */
+:-ms-input-placeholder { text-shadow:0 1px 1px white; font-weight:bold; } /* ie */
+#registration-form input[type=text] , input[type=password]{
+    padding: 15px 20px;
+    border-radius: 1px;
+  margin:5px auto;
+  background-color:#f7f7f7;
+    border: 1px solid silver;
+
+    -webkit-box-shadow: inset 0 1px 5px rgba(0,0,0,0.2);
+    box-shadow: inset 0 1px 5px rgba(0,0,0,0.2), 0 1px rgba(255,255,255,.8);
+    width: 100%;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+  -webkit-transition:background-color .5s ease;
+-moz-transition:background-color .5s ease;
+-o-transition:background-color .5s ease;
+-ms-transition:background-color .5s ease;
+transition:background-color .5s ease;
+}
+.no-placeholder #registration-form input[type=text] {
+    padding: 10px 20px;
+}
+
+#registration-form input[type=text]:active, .placeholder #registration-form input[type=text]:focus {
+    outline: none;
+    border-color: silver;
+  background-color:white;
+}
+
+#registration-form input[type=submit]{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    background-color: #349e92;
+    padding: 13px;
+    color: white;
+    border: 1px solid #349e92;
+    border-radius: 5px;
+
+    -webkit-box-shadow: 0 5px #FFF;
+    box-shadow: 0 5px #349e92;
+    font-size: 17px;
+    font-weight: bold;
+    margin-top: 5px;
+    text-shadow: 0 1px 2px rgba(0,0,0,.5);
+
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    transition: all .3s ease;
+    cursor: pointer;
+  position:relative;
+  top:0;
+}
+
+#registration-form input[type=submit]:hover {
+    background-color: #62748e;
+}
+
+#registration-form input[type=submit]:active {
+    position: relative;
+    top: 5px;
+
+    -webkit-box-shadow: 0 0 #161616;
+    box-shadow: 0 0 #161616;
+}
+
+.noise {
+    background-image: url(data:image/png;base64,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);
+}
+
+.parsley-error-list{
+background-color:#C34343;
+padding: 5px 11px;
+margin: 0;
+list-style: none;
+border-radius: 0 0 3px 3px;
+margin-top:-5px;
+  margin-bottom:5px;
+  color:white;
+  border:1px solid #870d0d;
+  border-top:none;
+    -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  position:relative;
+  top:-1px;
+  text-shadow:0px 1px 1px #460909;
+    font-weight:700;
+  font-size:12px;
+}
+.parsley-error{
+    border-color:#870d0d!important;
+  border-bottom:none;
+}
+#registration-form select{
+    width:100%;
+    padding:5px;
+}
+::-moz-focus-inner {
+  border: 0;
+}
+.effect6 {
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    position: relative;
+}
+.effect6:before, .effect6:after {
+    border-radius: 100px 100px 100px 100px / 10px 10px 10px 10px;
+    bottom: 0;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    content: "";
+    left: 10px;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    z-index: -1;
+}
+.effect6:after {
+    left: auto;
+    right: 10px;
+    -webkit-transform: skew(8deg) rotate(3deg);
+    -moz-transform: skew(8deg) rotate(3deg);
+    -ms-transform: skew(8deg) rotate(3deg);
+    -o-transform: skew(8deg) rotate(3deg);
+    transform: skew(8deg) rotate(3deg);
+}
